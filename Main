@@ -1,0 +1,28 @@
+package de.hitselikez.main;
+
+import de.hitselikez.cmds.Ec;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Main extends JavaPlugin {
+
+    public static  String sys = "§6[System] §7";
+    public static  String noperm  = sys + "Dazu hast du keine Rechte !";
+
+    @Override
+    public void onEnable() {
+
+        Bukkit.getServer().getConsoleSender().sendMessage("§aDas PLugin wurde gestartet !");
+
+        getCommand("ec").setExecutor(new Ec());
+        getCommand("enderchest").setExecutor(new Ec());
+
+    }
+
+    @Override
+    public void onDisable() {
+
+        Bukkit.getServer().getConsoleSender().sendMessage("§4Das PLugin wurde gestoppt !");
+
+    }
+}
